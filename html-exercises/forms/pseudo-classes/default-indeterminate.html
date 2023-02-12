@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default and Indeterminate</title>
+    <style>
+        input ~ span {
+            position: relative;
+        }
+
+        input:default ~ span::after {
+            font-size: 0.7rem;
+            position: absolute;
+            content: "Default";
+            color: white;
+            background-color: black;
+            padding: 5px 10px;
+            right: -65px;
+            top: -3px;
+        }
+
+        input[type="radio"]:indeterminate {
+            border: 2px solid red;
+            animation: 0.4s linear infinite alternate border-pulse;
+        }
+
+        @keyframes border-pulse {
+            from {
+                border: 2px solid red;
+            }
+
+            to {
+                border: 6px solid red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <input type="radio" name="fruit" value="cherry" id="cherry" />
+        <label for="cherry">Cherry</label>
+        <span></span>
+    </p>
+</body>
+</html>
