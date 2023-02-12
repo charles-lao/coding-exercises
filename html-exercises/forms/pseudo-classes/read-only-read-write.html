@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read-only and Read-write</title>
+    <style>
+        :is(input:read-only, input:-moz-read-only, textarea:-moz-read-only,
+        textarea:read-only) {
+            border: 0;
+            box-shadow: none;
+            background-color: white;
+        }
+
+        :is(textarea:-moz-read-write, textarea:read-write) {
+            box-shadow: inset 1px 1px 3px #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="name">Name: </label>
+        <input id="name" name="name" type="text" value="Mr Soft" readonly />
+    </div>
+</body>
+</html>
