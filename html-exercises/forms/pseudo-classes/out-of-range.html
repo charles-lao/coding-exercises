@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Out-of-range</title>
+    <style>
+        input + span {
+            position: relative;
+        }
+
+        input + span::after {
+            font-size: 0.7 rem;
+            position: absolute;
+            padding: 5px 10px;
+            top: -26px;
+        }
+
+        input:out-of-range + span::after {
+            color: white;
+            background-color: red;
+            width: 155px;
+            content: "Outside allowable value range";
+            left: -182px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="age">Age (must be 12+): </label>
+        <input id="age" name="age" type="number" min="12" max="120" required />
+        <span></span>
+    </div>
+</body>
+</html>
