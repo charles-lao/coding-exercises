@@ -136,3 +136,83 @@ let user = new User("John");
 alert(user.name); // John
 
 user = new User(""); // Name is too short
+
+
+
+// Computer names [...]
+
+class User {
+    ['say' + 'Hi']() {
+        alert("Hello");
+    }
+
+}
+
+new User().sayHi();
+
+
+
+// Class fields
+
+class User {
+    name = "John";
+
+    sayHi() {
+        alert(`Hello, ${this.name}!`);
+    }
+}
+
+new User().sayHi(); // Hello, John!
+
+// example 2
+
+class User {
+    name = "John";
+}
+
+let user = new User();
+alert(user.name); // John
+alert(User.prototype.name); // undefined
+
+// example 3
+
+class User {
+    name = prompt("Name, please?", "John");
+}
+
+
+
+// Making bound methods with class fields
+
+class Button {
+    constructor(value) {
+        this.value = value;
+    }
+    click = () => {
+        alert(this.value);
+    }
+}
+
+let button = new Button("hello");
+
+setTimeout(button.click, 1000); // hello
+
+
+
+// Summary
+
+class MyClass {
+    prop = value; // property
+
+    constructor(...) { // constructor
+        // ...
+    }
+
+    method(...) {} // method
+
+    get something(...) {} // getter method
+    set something(...) {} // setter method
+
+    [Symbol.iterator]() {} // method with computed name (symbol here)
+    // ...
+}
