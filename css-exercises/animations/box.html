@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box</title>
+
+    <style>
+        body {
+            padding: 50px;
+            color: rgba(0, 0, 0, 0.7);
+        }
+
+        .trigger {
+            width: 200px;
+            height: 200px;
+            border: 20px solid #999;
+            background: #ddd;
+        }
+        .box {
+            display: inline-block;
+            background: pink;
+            width: 200px;
+            height: 200px;
+            transition: transform 300ms ease-in-out;
+            pointer-events: none;
+        }
+
+        .trigger.clicked .box {
+            transform: translate(200px, 150px) rotate(20deg);
+        }
+    </style>
+
+    <script>
+        $('.trigger').on('click', function() {
+            $(this).append('<div class="box">');
+        });
+    </script>
+</head>
+<body>
+    <div class="trigger">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
