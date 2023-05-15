@@ -1,0 +1,8 @@
+/* .element {
+    transition: [property] [duration] [ease] [delay];
+} */
+
+
+.element { 
+    transition: opacity 300ms ease-in-out 1s;
+}
