@@ -5,12 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drop Down Menus</title>
+    <style>
+        .main-ul {
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            gap: 25px;
+        }
+
+        .main-li {
+            cursor: pointer;
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+        .drop-li {
+            cursor: pointer;
+            list-style-type: none;
+            cursor: pointer;
+            margin-bottom: 5px;
+        }
+
+    </style>
 </head>
 <body>
-    <ul>
-        <li>Home</li>
-        <li>Menu</li>
-        <li>Account</li>
+    <ul class="main-ul">
+        <li class="main-li">Menu</li>
+        <li class="main-li">Account</li>
     </ul>
+    
+    <ul class="drop-ul">
+        <li class="drop-li">Dashboard</li>
+        <li class="drop-li">Settings</li>
+    </ul>
+
 </body>
 </html>
