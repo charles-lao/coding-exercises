@@ -19,25 +19,50 @@
             padding: 5px;
         }
 
-        .drop-li {
+        #drop-ul {
+            cursor: pointer;
+            list-style-type: none;
+            cursor: pointer;
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        #drop-li {
             cursor: pointer;
             list-style-type: none;
             cursor: pointer;
             margin-bottom: 5px;
+            display: none;
         }
 
     </style>
+
+    
 </head>
 <body>
     <ul class="main-ul">
-        <li class="main-li">Menu</li>
+        <li id="menu" class="main-li">Menu</li>
         <li class="main-li">Account</li>
     </ul>
     
-    <ul class="drop-ul">
+    <ul id="drop-ul">
         <li class="drop-li">Dashboard</li>
         <li class="drop-li">Settings</li>
     </ul>
 
 </body>
+
+<script async>
+    
+    const menu = document.querySelector('#menu');
+    const dropUl = document.querySelector('#drop-ul');
+
+    menu.addEventListener('click', (e) => {
+        dropUl.style.display = 'flex';
+    });
+
+</script>
+
 </html>
+
