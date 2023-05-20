@@ -1,0 +1,18 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    background-color: rgba(41, 37, 37, 0.877);
+    color: white;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+}
