@@ -7,12 +7,55 @@ body {
     color: white;
 }
 
+h3 {
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     gap: 20px;
+    height: 500px;
 }
+
+.left-container,
+.right-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 3rem;
+}
+
+
 
 .center-container {
     display: flex;
     flex-direction: column;
+    flex: 10;
+}
+
+
+#slide1 {
+    background: url("1.webp");
+    background-size: 100%;
+}
+
+#slide2 {
+    background: url("2.jpg");
+    background-size: 100%;
+    display: none;
+    opacity: 0;
+}
+
+#slide3 {
+    background: url("3.jpg");
+    background-size: 100%;
+    display: none;
+    opacity: 0;
+}
+
+.slide {
+    
+    height: 450px;
 }
