@@ -14,7 +14,7 @@ h3 {
 .container {
     display: flex;
     gap: 20px;
-    height: 500px;
+    height: 530px;
 }
 
 .left-container,
@@ -24,7 +24,7 @@ h3 {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 3rem;
+    font-size: 4rem;
 }
 
 
@@ -33,6 +33,7 @@ h3 {
     display: flex;
     flex-direction: column;
     flex: 10;
+    gap: 10px;
 }
 
 
@@ -55,7 +56,15 @@ h3 {
     opacity: 0;
 }
 
-.slide {
-    
+.slide { 
     height: 450px;
+}
+
+.dots-container {
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
 }
