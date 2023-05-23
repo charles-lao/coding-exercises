@@ -1,6 +1,4 @@
-* {
-    border: 1px solid red;
-}
+
 
 body {
     background-color: rgba(41, 37, 37, 0.877);
@@ -36,10 +34,16 @@ h3 {
     gap: 10px;
 }
 
+.slider-container {
+    border: 1px solid white;
+    padding: 5px;
+}
+
 
 #slide {
     background: url("1.jpg");
     background-size: 100%;
+    background-position: 'center';
     transition: opacity 1s;
 }
 
