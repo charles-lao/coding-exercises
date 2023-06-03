@@ -11,23 +11,32 @@
 <body>
     <form>
         <label for="email">Email: 
-            <input type="email" name="email" id="email" placeholder="example@example.com" required/>
+            <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="email" id="email" placeholder="example@example.com" required/>
         </label>
 
         <label for="country">Country: 
-            <input type="text" name="country" id="country" placeholder="Country e.g. (Philippines)" required/>
+            <select name="country" id="countrySelect" required>
+                <option value="">Select a country</option>
+                <option value="USA">United States</option>
+                <option value="CAN">Canada</option>
+                <option value="GBR">United Kingdom</option>
+                <option value="AUS">Australia</option>
+                <option value="FRA">France</option>
+                <!-- Add more options here -->
+              </select>
+              
         </label>
 
         <label for="zip">Zip Code: 
-            <input type="text" name="zip" maxlength="5" pattern="[0-9]*" id="zip" required/>
+            <input type="text" name="zip" maxlength="5" pattern="[A-Za-z0-9\s]*" id="zip" required/>
         </label>
 
         <label for="password">Password: 
-            <input type="password" minlength="5" maxlength="20" name="password" id="password" required/>
+            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="20" name="password" id="password" required/>
         </label>
 
         <label for="password-confirm">Confirm: 
-            <input type="password" minlength="5" maxlength="20" name="password-confirm" id="password-confirm" required/>
+            <input type="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" minlength="8" maxlength="20" name="password-confirm" id="password-confirm" required/>
         </label>
         <input type="submit" value="Submit" />
     </form>
