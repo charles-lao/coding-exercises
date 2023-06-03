@@ -6,29 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation Project</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer ></script>
 </head>
 <body>
     <form>
-        <label for="mail">Email: 
-            <input type="mail" name="mail" id="mail" placeholder="example@example.com"/>
+        <label for="email">Email: 
+            <input type="email" name="email" id="email" placeholder="example@example.com" required/>
         </label>
 
         <label for="country">Country: 
-            <input type="text" name="country" id="country" placeholder="Country e.g. (Philippines)" />
+            <input type="text" name="country" id="country" placeholder="Country e.g. (Philippines)" required/>
         </label>
 
         <label for="zip">Zip Code: 
-            <input type="text" name="zip" maxlength="5" pattern="[0-9]*" id="zip" />
+            <input type="text" name="zip" maxlength="5" pattern="[0-9]*" id="zip" required/>
         </label>
 
         <label for="password">Password: 
-            <input type="password" name="password" id="password" />
+            <input type="password" minlength="5" maxlength="20" name="password" id="password" required/>
         </label>
 
         <label for="password-confirm">Confirm: 
-            <input type="password" name="password-confirm" id="password-confirm" />
+            <input type="password" minlength="5" maxlength="20" name="password-confirm" id="password-confirm" required/>
         </label>
-        <input type="button" value="Submit" />
+        <input type="submit" value="Submit" />
     </form>
 </body>
 </html>
