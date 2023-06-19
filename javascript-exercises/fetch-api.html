@@ -3,21 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GIPHY Search</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 85vh;
+            width: 600px;
+            gap: 4px;
+            border: 1px solid grey;
+            padding: 3px;
+            border-radius: 1%;
+        }
+    </style>
 </head>
 <body>
+    <input id="image-input" type="text" placeholder="GIF Search">
+    <button id="fetch-btn" type="button">Fetch GIF</button>
     <img src="#">
     <script>
+
+        const imageInput = document.querySelector("#image-input");
+        const fetchBtn = document.querySelector("#fetch-btn");
         const img = document.querySelector('img');
 
-        fetch('https://api.giphy.com/v1/gifs/translate?api_key=JnYXMXIz7DojCmqaBqBXRYnjderRshMV&s=cats', {mode: 'cors'})
+
+        const fetchCat = (searchKey) => {
+
+            if (searchKey == null || searchKey == undefined) {
+                searchKey = 'cat';
+            }
+
+            fetch('https://api.giphy.com/v1/gifs/translate?api_key=JnYXMXIz7DojCmqaBqBXRYnjderRshMV&s='+searchKey, {mode: 'cors'})
             .then(function(response) {
                 return response.json();
             })
             .then(function(response) {
                 // console.log(response.data.images.original.url);
                 img.src = response.data.images.original.url;
+            })
+            .catch(function(error) {
+                alert(error);
             });
+
+        }
+
+        fetchBtn.addEventListener("click", (e) => {
+            fetchCat(imageInput.value);
+        });
+
+        fetchCat();
+
+        
+
+
+
     </script>
 </body>
 </html>
